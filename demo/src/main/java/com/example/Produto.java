@@ -1,17 +1,26 @@
 package com.example;
 
+import java.util.Random;
+
 public abstract class Produto {
 
     private String tipo;
     private String marca;
     private Double preco;
+    private final int codigo;
+    private static Random random=new Random();
 
  
     public Produto(String tipo, String marca, Double preco){
         this.tipo=tipo;
         this.marca=marca;
         this.preco=preco;
+        this.codigo=Produto.random.nextInt();
 
+    }
+
+    public int getCodigo(){
+        return this.codigo;
     }
 
     public String getTipo() {
